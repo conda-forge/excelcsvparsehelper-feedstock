@@ -36,7 +36,7 @@ test:
 
 about:
   home: https://pypi.org/project/ExcelCSVParseHelper/
-  license: MIT
+  license: BSD-3-Clause OR MIT
   license_file: LICENSE
   summary: Lightweight helpers for Excel/CSV on Windows.
 
