@@ -1,5 +1,6 @@
 {% set name = "excelcsvparsehelper" %}
 {% set version = "1.1.1" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name }}
@@ -10,17 +11,17 @@ source:
   sha256: e89e37129a004f5819abb593e28cb3ea7eb7e49a29e0e0ea68b9a323158432c9
 
 build:
-  number: 0
+  number: 1
   skip: true  # [not win or py<310]
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
 
 requirements:
   host:
-    - python
+    - python {{ python_min }}
     - pip
     - setuptools
   run:
-    - python
+    - python >={{ python_min }}
     - pandas >=2.0
     - openpyxl >=3.1.5
     - psutil  # [win]
