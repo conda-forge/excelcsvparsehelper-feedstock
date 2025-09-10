@@ -1,5 +1,5 @@
 {% set name = "excelcsvparsehelper" %}
-{% set version = "1.1.5" %}
+{% set version = "1.2.0" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 8786f84dc39a59f9532802d90081768986bd4e05716410e0ec9456eb42c37dd6
+  sha256: e3c14dc9fcc3391d6f0f6b8a696c52b6a88dc67e1a311a6cf72bd814adb1e4aa
 
 build:
   number: 0
