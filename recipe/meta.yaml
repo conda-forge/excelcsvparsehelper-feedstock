@@ -1,5 +1,5 @@
 {% set name = "excelcsvparsehelper" %}
-{% set version = "1.2.1" %}
+{% set version = "1.2.3" %}
 
 package:
   name: {{ name }}
@@ -7,22 +7,23 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 2cf070d60fe5dc7e182a714ca9f01cff7aee3e05163f9a42560a2b560223dbb5
+  sha256: 2028e3bd661cf085fde7d88bb95d67ab88f96893295d51cbbfbca008c6d9c027
 
 build:
-  number: 1
-  skip: true  # [not win or py<310]
+  number: 0
+  skip: true  # [py<310]
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
 
 requirements:
   host:
-    - python
+    - python >=3.10
     - pip
     - setuptools
   run:
-    - python
+    - python >=3.10
     - pandas >=2.0
     - openpyxl >=3.1.5
+    - lockfilesemaphore >=3.0.2
     - psutil  # [win]
     - pywin32  # [win]
 
@@ -38,7 +39,7 @@ about:
   home: https://pypi.org/project/ExcelCSVParseHelper/
   license: MIT
   license_file: LICENSE
-  summary: Lightweight helpers for Excel/CSV on Windows.
+  summary: Lightweight helpers for Excel/CSV (cross-platform; some Excel automation helpers are Windows-only).
 
 extra:
   recipe-maintainers:
